@@ -18,7 +18,7 @@ status_codes = {
 
 @app.route('/', methods=['GET'])
 def get():
-    return jsonify('Welcome to Distributed Systems 2024. Atte: Jose')
+    return jsonify('Welcome to Distributed Systems 2025. Atte: Jose')
 
 @app.route('/users', methods=['GET'])
 def get_users():
@@ -53,13 +53,13 @@ def find_user_by_email(user_email):
     return None
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True, host="0.0.0.0", port=5000)
 
 # USEFUL TO DO NOT WASTE TIME
 
 ### Run commands
 # pip install Flask jsonify
-# python august_16.py
+# python april_04_2025.py
 
 
 ### Requests
