@@ -35,7 +35,6 @@ async function initDb() {
 
   const { rows: existing } = await db.query(`SELECT COUNT(*) FROM artists`);
   if (parseInt(existing[0].count, 10) === 0) {
-    // Insertar artistas
     await Promise.all(
       artists.map(artist =>
         db.query(
