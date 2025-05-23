@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  microservice2:
+    build:
+      context: ./microservice_2
+    ports:
+      - "4000:4000"
+    networks:
+      - SDnetwork
+
+  microservice1:
+    build:
+      context: ./microservice_1
+    ports:
+      - "5000:5000"
+    networks:
+      - SDnetwork
+
+networks:
+  SDnetwork:
+    driver: bridge
