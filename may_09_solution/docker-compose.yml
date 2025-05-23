@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  api:
+    build: .
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+    environment:
+      - PGHOST=db
+      - PGUSER=postgres
+      - PGPASSWORD=postgres
+      - PGDATABASE=concerts
+      - PGPORT=5432
+    restart: unless-stopped
+
+  db:
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_DB: concerts
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
